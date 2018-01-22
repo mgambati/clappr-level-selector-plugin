@@ -1,4 +1,4 @@
-import {Events, Styler, UICorePlugin, template} from 'Clappr'
+import {Events, Styler, UICorePlugin, template} from 'clappr'
 import pluginHtml from './public/level-selector.html'
 import pluginStyle from './public/style.scss'
 
@@ -101,17 +101,17 @@ export default class LevelSelector extends UICorePlugin {
     {
         throw new TypeError('labelCallback must be a function')
     }
-    
+
     var hasLabels = this.core.options.levelSelectorConfig.labels
     var labels = hasLabels ? this.core.options.levelSelectorConfig.labels : {};
-    
+
     if(labelCallback || hasLabels)
     {
         var level
         var label
         for(var levelId in this.levels) {
             level = this.levels[levelId]
-            label = labels[level.id] 
+            label = labels[level.id]
             if(labelCallback)
             {
                 level.label = labelCallback(level,label)
