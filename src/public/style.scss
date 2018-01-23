@@ -35,9 +35,22 @@
   li {
     position:relative;
     font-size: 10px;
+    color: #fff;
 
     &[data-title] {
       padding: 5px;
+    }
+
+    &.current {
+      background-color: rgba(0,0,0,1.0);
+      font-weight: bold;
+      color: #fff;
+      &:before {
+          content: '\2713';
+          position: absolute;
+          top:2px;
+          left:4px;
+      }
     }
 
     a {
@@ -46,17 +59,7 @@
       display: block;
       text-decoration: none;
 
-      &.current {
-        background-color: rgba(0,0,0,1.0);
-        font-weight: bold;
-        color: #fff;
-        &:before {
-            content: '\2713';
-            position: absolute;
-            top:2px;
-            left:4px;
-        }
-      }
+
       &:hover {
         color: #fff;
         text-decoration: none;
